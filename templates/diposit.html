@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: darkgray;
+            background: linear-gradient(45deg, #333333, #0072ff);
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            font-size: 20px;
+            margin-bottom: 10px;
+            display: block;
+            color: #333;
+        }
+        input[type="number"] {
+            padding: 12px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker green */
+        }
+        form {
+            margin-top: 20px;
+        }
+        form input[type="submit"] {
+            margin-top: 10px;
+        }
+        button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var data = "{{msg}}";
+        if (data == "noaccount"){
+          alert("Account Does Not Exist")
+        }
+        else if (data == "accnt"){
+          alert("diposit successfull...!!!")
+        }
+    </script>
+    <div class="container">
+        <h1>Deposit</h1>
+        <h2>hiii {{ user_name}}</h2>
+        <form action="/diposit2" method="POST">
+            <input type="number" name="accno" id="accno" placeholder= "Enter Account Number"><br><br>
+            <input type="number" name="amount" id="amount" placeholder= "Enter amount"><br><br>
+            <button type="submit">diposit</button>
+            
+        </form>
+        <h2><a href="/"> <button>  back to home  </a></button></h2>
+        </div>
+</body>
+</html>
